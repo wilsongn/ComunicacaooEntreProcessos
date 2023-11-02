@@ -47,7 +47,7 @@ public class Jantar extends JFrame {
 	}
 	
 	public Jantar() {
-		setTitle("Jantar dos Fil\u00F3sofos");;
+		setTitle("Jantar dos Fil\u00F3sofos");
 		ImageIcon referencia = new ImageIcon("TrabalhoSO/JantarDosFilosofos/src/Imagens/Mesa.png");
 		mesa = referencia.getImage();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
