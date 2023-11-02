@@ -6,6 +6,7 @@ public class Filosofo extends Thread {
 	private int filosofo;
 	private Jantar jantar;
 	private Semaphore garfos[];
+	private eEstadoDoFilosofo estado;
 
 	public Filosofo(int chave, Jantar jantar, Semaphore[] garfos) {
 		this.filosofo = chave;		
@@ -18,32 +19,39 @@ public class Filosofo extends Thread {
 	}
 
 	public void setStatus(eEstadoDoFilosofo estado) {
+		this.estado = estado;
 		jantar.SetInfo(filosofo, estado);
 	}
 
 	private void pensando() { 
 		try {
-			Thread.sleep(1000);
+			Thread.sleep(10000);
 		} catch (Exception e) {
 		}
 	}
 
 	private void comendo() { 
 		try {
-			Thread.sleep(2500);
+			Thread.sleep(12500);
 		} catch (Exception e) {
 		}
 	}
 	 
 	public void run() {
         while (true) {
-            setStatus(eEstadoDoFilosofo.PENSANDO);
-            pensando();
-            setStatus(eEstadoDoFilosofo.FAMINTO);
+			if(this.estado != eEstadoDoFilosofo.FAMINTO){
+				setStatus(eEstadoDoFilosofo.PENSANDO);
+            	pensando();
+            	setStatus(eEstadoDoFilosofo.FAMINTO);
+			}     
             try {
                 garfos[getChave()].acquire();
-                garfos[(getChave() + 1) % 5].acquire();
-                setStatus(eEstadoDoFilosofo.COM_DOIS_GARFOS);
+				if(garfos[(getChave() + 1) % 5].tryAcquire()) //Tenta pegar o garfo da direita
+					setStatus(eEstadoDoFilosofo.COMENDO); //Se conseguir come
+                else{
+					garfos[getChave()].release(); //Se não conseguir devolve o garfo da esquerda e volta pro inicio do while com estado FAMINTO
+					continue;
+				}	
                 comendo();
                 garfos[getChave()].release();
                 garfos[(getChave() + 1) % 5].release();

@@ -48,7 +48,7 @@ public class Jantar extends JFrame {
 	
 	public Jantar() {
 		setTitle("Jantar dos Fil\u00F3sofos");;
-		ImageIcon referencia = new ImageIcon("src\\Imagens\\Mesa.png");
+		ImageIcon referencia = new ImageIcon("TrabalhoSO/JantarDosFilosofos/src/Imagens/Mesa.png");
 		mesa = referencia.getImage();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1024, 1024);
@@ -57,9 +57,6 @@ public class Jantar extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		setResizable(false);
-		
-		referencia = new ImageIcon("src\\Imagens\\mesa.png");
-		
 
 		Semaphore[] garfosSem = new Semaphore[5];
         for (int i = 0; i < 5; i++) {
@@ -79,79 +76,78 @@ public class Jantar extends JFrame {
 		f4.start();
 	}
 	
-	public void SetInfo(int chave, eEstadoDoFilosofo estado) {
-		
+	public void SetInfo(int chave, eEstadoDoFilosofo estado) {		
 		if (chave == 0) {		
 			if (estado == eEstadoDoFilosofo.PENSANDO) {
-				ImageIcon referencia = new ImageIcon("src\\Imagens\\imgFilosofo0Pensando.png");		
+				ImageIcon referencia = new ImageIcon("TrabalhoSO/JantarDosFilosofos/src/Imagens/imgFilosofo0Pensando.png");		
 				filosofo0 = referencia.getImage();
 				
 			} else if (estado == eEstadoDoFilosofo.FAMINTO) {
-				ImageIcon referencia = new ImageIcon("src\\Imagens\\imgFilosofo0Faminto.png");		
+				ImageIcon referencia = new ImageIcon("TrabalhoSO/JantarDosFilosofos/src/Imagens/imgFilosofo0Faminto.png");		
 				filosofo0 = referencia.getImage();
 				
-			} else if (estado == eEstadoDoFilosofo.COM_DOIS_GARFOS) {
-				ImageIcon referencia = new ImageIcon("src\\Imagens\\imgFilosofo0Comendo.png");		
+			} else if (estado == eEstadoDoFilosofo.COMENDO) {
+				ImageIcon referencia = new ImageIcon("TrabalhoSO/JantarDosFilosofos/src/Imagens/imgFilosofo0Comendo.png");		
 				filosofo0 = referencia.getImage();				
 			}
 		}
 		else if (chave == 1) {
 			if (estado == eEstadoDoFilosofo.PENSANDO) {
-				ImageIcon referencia = new ImageIcon("src\\Imagens\\imgFilosofo1Pensando.png");		
+				ImageIcon referencia = new ImageIcon("TrabalhoSO/JantarDosFilosofos/src/Imagens/imgFilosofo1Pensando.png");		
 				filosofo1 = referencia.getImage();
 			
 			} else if (estado == eEstadoDoFilosofo.FAMINTO) {
-				ImageIcon referencia = new ImageIcon("src\\Imagens\\imgFilosofo1Faminto.png");		
+				ImageIcon referencia = new ImageIcon("TrabalhoSO/JantarDosFilosofos/src/Imagens/imgFilosofo1Faminto.png");		
 				filosofo1 = referencia.getImage();
 			
 
-			} else if (estado == eEstadoDoFilosofo.COM_DOIS_GARFOS) {
-				ImageIcon referencia = new ImageIcon("src\\Imagens\\imgFilosofo1Comendo.png");		
+			} else if (estado == eEstadoDoFilosofo.COMENDO) {
+				ImageIcon referencia = new ImageIcon("TrabalhoSO/JantarDosFilosofos/src/Imagens/imgFilosofo1Comendo.png");		
 				filosofo1 = referencia.getImage();
 			}
 		}
 		else if (chave == 2) {
 			if (estado == eEstadoDoFilosofo.PENSANDO) {
-				ImageIcon referencia = new ImageIcon("src\\Imagens\\imgFilosofo2Pensando.png");		
+				ImageIcon referencia = new ImageIcon("TrabalhoSO/JantarDosFilosofos/src/Imagens/imgFilosofo2Pensando.png");		
 				filosofo2 = referencia.getImage();
 			
 			} else if (estado == eEstadoDoFilosofo.FAMINTO) {
-				ImageIcon referencia = new ImageIcon("src\\Imagens\\imgFilosofo2Faminto.png");		
+				ImageIcon referencia = new ImageIcon("TrabalhoSO/JantarDosFilosofos/src/Imagens/imgFilosofo2Faminto.png");		
 				filosofo2 = referencia.getImage();
 			
 
-			} else if (estado == eEstadoDoFilosofo.COM_DOIS_GARFOS) {
-				ImageIcon referencia = new ImageIcon("src\\Imagens\\imgFilosofo2Comendo.png");		
+			} else if (estado == eEstadoDoFilosofo.COMENDO) {
+				ImageIcon referencia = new ImageIcon("TrabalhoSO/JantarDosFilosofos/src/Imagens/imgFilosofo2Comendo.png");		
 				filosofo2 = referencia.getImage();
 			}
 		}
 		else if (chave == 3) {
 			if (estado == eEstadoDoFilosofo.PENSANDO) {
-				ImageIcon referencia = new ImageIcon("src\\Imagens\\imgFilosofo3Pensando.png");		
+				ImageIcon referencia = new ImageIcon("TrabalhoSO/JantarDosFilosofos/src/Imagens/imgFilosofo3Pensando.png");		
 				filosofo3 = referencia.getImage();
 			
 			} else if (estado == eEstadoDoFilosofo.FAMINTO) {
-				ImageIcon referencia = new ImageIcon("src\\Imagens\\imgFilosofo3Faminto.png");		
+				ImageIcon referencia = new ImageIcon("TrabalhoSO/JantarDosFilosofos/src/Imagens/imgFilosofo3Faminto.png");		
 				filosofo3 = referencia.getImage();
 			
 
-			} else if (estado == eEstadoDoFilosofo.COM_DOIS_GARFOS) {
-				ImageIcon referencia = new ImageIcon("src\\Imagens\\imgFilosofo3Comendo.png");		
+			} else if (estado == eEstadoDoFilosofo.COMENDO) {
+				ImageIcon referencia = new ImageIcon("TrabalhoSO/JantarDosFilosofos/src/Imagens/imgFilosofo3Comendo.png");		
 				filosofo3 = referencia.getImage();
 			}
 		}
 		else if (chave == 4) {
 			if (estado == eEstadoDoFilosofo.PENSANDO) {
-				ImageIcon referencia = new ImageIcon("src\\Imagens\\imgFilosofo4Pensando.png");		
+				ImageIcon referencia = new ImageIcon("TrabalhoSO/JantarDosFilosofos/src/Imagens/imgFilosofo4Pensando.png");		
 				filosofo4 = referencia.getImage();
 			
 			} else if (estado == eEstadoDoFilosofo.FAMINTO) {
-				ImageIcon referencia = new ImageIcon("src\\Imagens\\imgFilosofo4Faminto.png");		
+				ImageIcon referencia = new ImageIcon("TrabalhoSO/JantarDosFilosofos/src/Imagens/imgFilosofo4Faminto.png");		
 				filosofo4 = referencia.getImage();
 			
 
-			} else if (estado == eEstadoDoFilosofo.COM_DOIS_GARFOS) {
-				ImageIcon referencia = new ImageIcon("src\\Imagens\\imgFilosofo4Comendo.png");		
+			} else if (estado == eEstadoDoFilosofo.COMENDO) {
+				ImageIcon referencia = new ImageIcon("TrabalhoSO/JantarDosFilosofos/src/Imagens/imgFilosofo4Comendo.png");		
 				filosofo4 = referencia.getImage();
 			}
 		}
